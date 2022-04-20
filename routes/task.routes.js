@@ -1,4 +1,4 @@
-
+const taskAPI = require('../controllers/task.controller');
 
 const routes = [
     {
@@ -15,6 +15,16 @@ const routes = [
             return {success : true}
         }
     },
+    {
+        method: "POST",
+        path: '/task/register',
+        options: taskAPI.register
+    },
+    {
+        method: 'GET',
+        path: '/task',
+        options: taskAPI.all
+    }
 ]
 
 module.exports = routes;

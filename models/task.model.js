@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 
 const taskModel = new mongoose.Schema({
-    name: {
+    title: {
         type: String,
         required: '{PATH} is required'
     },
-    description: {
-        type: String
+    status: {
+        type: String,
+        enum: ["pending", "completed"],
+        default: "pending"
     }
 }, {
     timestamps: true

@@ -15,7 +15,7 @@ const server = Hapi.server({
 const startServer = async () => {
 	try{
 		routes.forEach((route) => {
-			// console.log(route);
+			console.log(route);
 			server.route(route)
 		})
 		await server.start();
